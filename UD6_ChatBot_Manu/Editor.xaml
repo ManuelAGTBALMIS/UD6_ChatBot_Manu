@@ -1,0 +1,140 @@
+﻿<Window
+    x:Class="UD6_ChatBot_Manu.Editor"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:local="clr-namespace:UD6_ChatBot_Manu"
+    mc:Ignorable="d"
+    Title="Configuración de la aplicación"
+    Icon="Recursos/config.ico"
+    ShowInTaskbar="False"
+    ResizeMode="NoResize"
+    Height="320"
+    Width="400">
+
+    <StackPanel Orientation="Vertical">
+
+        <DockPanel Margin="10">
+            <TextBlock
+                Width="100"
+                Text="Color de fondo"
+                Margin="10" />
+            <ComboBox
+                SelectedValuePath="Name"
+                SelectedValue="{Binding Path=Fondo}"
+                Height="22"
+                Width="235"
+                x:Name="FondoColorComboBox">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel
+                            Orientation="Horizontal">
+                            <Rectangle
+                                Fill="{Binding Name}"
+                                Width="16"
+                                Height="16"
+                                Margin="0,2,5,2" />
+                            <TextBlock
+                                Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </DockPanel>
+        
+        <DockPanel
+            Margin="10">
+            <TextBlock
+                Width="100"
+                Text="Color del usuario"
+                Margin="10" />
+            <ComboBox
+                Height="22"
+                Width="235"
+                SelectedValuePath="Name"
+                SelectedValue="{Binding Path=ColUser}"
+                x:Name="ColorUsuarioComboBox">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel
+                            Orientation="Horizontal">
+                            <Rectangle
+                                Fill="{Binding Name}"
+                                Width="16"
+                                Height="16"
+                                Margin="0,2,5,2" />
+                            <TextBlock
+                                Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </DockPanel>
+
+        <DockPanel
+            Margin="10">
+            <TextBlock
+                Width="100"
+                Text="Color del robot"
+                Margin="10" />
+            <ComboBox
+                Height="22"
+                Width="235"
+                SelectedValuePath="Name"
+                SelectedValue="{Binding Path=ColBot}"
+                x:Name="ColorRobotComboBox">
+                <ComboBox.ItemTemplate>
+                    <DataTemplate>
+                        <StackPanel
+                            Orientation="Horizontal">
+                            <Rectangle
+                                Fill="{Binding Name}"
+                                Width="16"
+                                Height="16"
+                                Margin="0,2,5,2" />
+                            <TextBlock
+                                Text="{Binding Name}" />
+                        </StackPanel>
+                    </DataTemplate>
+                </ComboBox.ItemTemplate>
+            </ComboBox>
+        </DockPanel>
+
+        <DockPanel
+            Margin="10">
+            <TextBlock
+                Width="100"
+                Text="Sexo del usuario"
+                Margin="10" />
+            <ComboBox
+                x:Name="SexoComboBox"
+                HorizontalAlignment="Left"
+                SelectedValuePath="Content"
+                SelectedValue="{Binding Path=Genero}"
+                Width="125"
+                Margin="10">
+                <ComboBoxItem>hombre</ComboBoxItem>
+                <ComboBoxItem>mujer</ComboBoxItem>
+            </ComboBox>
+        </DockPanel>
+
+        <DockPanel LastChildFill="False">
+            <StackPanel DockPanel.Dock="Right" Orientation="Horizontal">
+                <Button Width="100" 
+                        Margin="10"
+                        IsDefault="True"
+                        Click="AceptarButton_Click"
+                        x:Name="AceptarButton"> Aceptar </Button>
+                
+                <Button Width="100" 
+                        Margin="10"
+                        IsCancel="True"
+                        x:Name="CancelarButton"> Cancelar </Button>
+            </StackPanel>
+        </DockPanel>
+
+    </StackPanel>
+    
+    
+</Window>
